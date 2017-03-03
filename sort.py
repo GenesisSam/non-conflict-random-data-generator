@@ -24,7 +24,7 @@ def get_csv_writer(filename, rows, delimiter):
   with open(filename, 'w') as csvfile:
     for row in rows:
       try:
-        csvfile.write("%d%s" % (row, delimiter))
+        csvfile.write("%d%s\n" % (row, delimiter))
       except Exception as detail:
         print(type(detail))
         print(detail)
