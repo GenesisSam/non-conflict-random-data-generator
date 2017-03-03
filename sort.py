@@ -1,6 +1,7 @@
 import csv
 import random
 import os
+import time
 
 # random data
 def generate(max_leng=10000):
@@ -8,13 +9,16 @@ def generate(max_leng=10000):
   d = []
 
   print("Begin generate random data")
+  st_time = time.time()
   while i < max_leng:
     ran_var = random.randint(1, max_leng*2)
     if (ran_var not in d):
       print("%d" % (i))
       d.append(ran_var)
       i += 1
+  end_time = time.time()
   print("End generate random data")
+  print("Duration: %.5f" % (end_time - st_time))
   print("Begin file out")
   get_csv_writer("rnd.csv", d, ",")
   print("Done file out")
